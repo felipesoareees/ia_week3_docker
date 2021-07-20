@@ -1,2 +1,25 @@
 # ia_week3_docker
-This repository has the challenge of week three. It explain the docker tools and  docker concepts.
+
+- Description : This repository has the challenge of week three. It explain the docker tools and  docker concepts.
+
+## The schedule this project is:
+
+# What is a linux container?
+
+# What is a Docker?
+
+- What is?
+- What is its high-level architecture?
+
+# How Docker is used in Runtime Environment?
+
+# Docker file
+ - What is?
+ - How to image tags work?
+ - How send an image to a registry?
+
+# Run a Docker container with:
+ - Detached Mode
+ - Port Mapping 
+ - Bind Mount
+ - Volue Mount
