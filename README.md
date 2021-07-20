@@ -9,7 +9,7 @@
 # What is a Docker?
 
 - What is?
-- What is its high-level architecture?
+- What is its high-level architecture (Docker Daemon)?
 
 # How Docker is used in Runtime Environment?
 
@@ -22,4 +22,9 @@
  - Detached Mode
  - Port Mapping 
  - Bind Mount
- - Volue Mount
+ - Volume Mount
+
+# Hands On:
+
+- Install Docker
+- Practice with options of the run (detached,port mapping, volumes and bind.
