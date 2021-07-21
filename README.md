@@ -33,11 +33,11 @@ This is a client-server application with these major components:
 ![image](https://user-images.githubusercontent.com/83301821/126408917-5f346daa-72e1-4ea3-8c0d-0946f9c85893.png)
 (avaible in: https://medium.com/@hsienwei/a-high-level-overview-of-docker-888d8556e187) 
 
- A server which is a type of long-running program called a daemon process (the dockerd command). The daemon creates and manages Docker objects, such as images, containers, networks, and volumes.
+ *A server* which is a type of long-running program called a daemon process (the dockerd command). The daemon creates and manages Docker objects, such as images, containers, networks, and volumes.
  
- A REST API which specifies interfaces that programs can use to talk to the daemon and instruct it what to do.
+ *A REST API* which specifies interfaces that programs can use to talk to the daemon and instruct it what to do.
  
- A command line interface (CLI) client (the docker command). The CLI uses the Docker REST API to control or interact with the Docker daemon through scripting or direct CLI commands.
+ *A command* line interface (CLI) client (the docker command). The CLI uses the Docker REST API to control or interact with the Docker daemon through scripting or direct CLI commands.
 
 # How Docker is used in Runtime Environment?
 Docker is mainly used by Runtime engineers to build images for tests, validations, and debugging. However, all RTE clients use Docker as a container Runtime for their applications, and an RTE engineer must understand Docker to properly comprehend the entire architecture.
@@ -68,6 +68,7 @@ Note that the container is a docker process active.
 Containers don't have direct access to machine hardware. As we've already talked about, the Docker Daemon is responsible for providing all types of requests (either from the cli or from the container). Thus, the port mapping is done between requests and containers and other layers that may consume resources from the docker. Docker uses port forwarding to define the routes between the incoming and outgoing connections of each of the containers. Through the Net Filter (iptables) the proper routing is done.
 
 ![image](https://user-images.githubusercontent.com/83301821/126413168-1dfd554c-2c02-4f8c-acce-a5664f0fe5fe.png)
+
 (avaible in : https://www.gta.ufrj.br/ensino/eel879/trabalhos_v1_2017_2/docker/network.html)
 
 Usage:
@@ -80,4 +81,27 @@ After this, note:
 There are the parameter 0.0.0.0:5432 > 5432 . The port 5432 external was mapped to 5432 internal. This case, there wasn't PAT (port address translation).
 
  - Bind Mount
+
+It is used for occasions where the volume directory already exists (also when it is not located in the default docker folder). We can define any directory to be the mount point of the container volume.
+
+Usage:
+
+![image](https://user-images.githubusercontent.com/83301821/126416835-4632d586-1e6c-4857-9827-db266aebc052.png)
+
+With a option type = bind , we choose a source directory to represent a destination directory within the container
+
+After this, we may have the following situation:
+
+![image](https://user-images.githubusercontent.com/83301821/126417168-62da2d49-7370-4823-a59d-3ce1e0c1cb53.png)
+
+After writing to the file inside the container, on the host machine we have the same writing on the filesystem.
+
  - Volume Mount
+
+Another type of montage is through the volume. Unlike bind, the volume can be managed by *"docker volume [options]"* and the content by default is located in */var/lib/docker/volume/*
+
+Usage:
+
+![image](https://user-images.githubusercontent.com/83301821/126418563-1519fd7c-66ea-479d-9415-a0ea9e202f32.png)
+
+Above we created a volume called db_data and pointed the files from a postgresql container to populate this volume. After running the container with the volume type mount point, the default postgresql files (located in /data) were populated on the previously created volume.
