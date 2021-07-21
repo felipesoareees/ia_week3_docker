@@ -46,7 +46,21 @@ Docker is mainly used by Runtime engineers to build images for tests, validation
  - What is?
 
 Is a file that contains instructions when building an image. It is through it that we provision the desired image. It is at this stage that we define settings such as: from which source this new image will be downloaded, which command will be executed in its respective layers and which command it will execute in the execution process (post-creation)
+
+![image](https://user-images.githubusercontent.com/83301821/126537491-f80f455f-f87e-45e7-a3ac-e0a53e27ee3d.png)
+
+Above, we have some instructions regarding provisioning the image that will be created. The FROM type field defines which image (public or not) it will be sourced, for our case we use a debian. After that, we set some variables and install some packages and at the end we run a command, this will ensure that the container that is run from this new image will run the stress (obviously this Dockerfile is just a demonstration.)
+
  - How to image tags work?[PRACTICE]
+
+The tag is an identification of the image's versioning. Imagine that you have an image of an application and that it will be necessary for a specific container to make a modification to the docker file. In other words, we can build a new image with the same name, after all it is the same application, but with different tags. In the tags we can define the versioning of our images.
+
+Demonstration:
+
+![image](https://user-images.githubusercontent.com/83301821/126538278-5100880f-db68-4ff2-957e-8e36fcd12ae2.png)
+
+Note that in the image below, we have several images of a application(apache), but with differents tags.
+
  - How send an image to a registry? [PRACTICE]
 
 # Run a Docker container with  [PRACTICE]:
