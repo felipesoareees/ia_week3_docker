@@ -40,19 +40,15 @@ This is a client-server application with these major components:
  A command line interface (CLI) client (the docker command). The CLI uses the Docker REST API to control or interact with the Docker daemon through scripting or direct CLI commands.
 
 # How Docker is used in Runtime Environment?
+Docker is mainly used by Runtime engineers to build images for tests, validations, and debugging. However, all RTE clients use Docker as a container Runtime for their applications, and an RTE engineer must understand Docker to properly comprehend the entire architecture.
 
 # Docker file
  - What is?
- - How to image tags work?
- - How send an image to a registry?
+ - How to image tags work?[PRACTICE]
+ - How send an image to a registry? [PRACTICE]
 
-# Run a Docker container with:
+# Run a Docker container with  [PRACTICE]:
  - Detached Mode
  - Port Mapping 
  - Bind Mount
  - Volume Mount
-
-# Hands On:
-
-- Install Docker
-- Practice with options of the run (detached,port mapping, volumes and bind.
