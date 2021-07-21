@@ -44,11 +44,40 @@ Docker is mainly used by Runtime engineers to build images for tests, validation
 
 # Docker file
  - What is?
+
+Is a file that contains instructions when building an image. It is through it that we provision the desired image. It is at this stage that we define settings such as: from which source this new image will be downloaded, which command will be executed in its respective layers and which command it will execute in the execution process (post-creation)
  - How to image tags work?[PRACTICE]
  - How send an image to a registry? [PRACTICE]
 
 # Run a Docker container with  [PRACTICE]:
  - Detached Mode
+
+By default, if we don't specify the -d option the container will run in foreground. Often this is not interesting (foreground use) as we need to ensure that the environment is provisioned even when we are not with the SSH session open. Thus, detached mode when used together with the run ensures that the process will remain up on the machine running in the background.
+
+Usage:
+
+![image](https://user-images.githubusercontent.com/83301821/126412610-5b24ddf4-9fff-4a31-900b-c2a3b7e876fc.png)
+
+And after this, we have:
+![image](https://user-images.githubusercontent.com/83301821/126412687-b2fdc6bc-efbc-47a2-a45e-8d55b145f6e2.png)
+
+Note that the container is a docker process active.
+
  - Port Mapping 
+
+Containers don't have direct access to machine hardware. As we've already talked about, the Docker Daemon is responsible for providing all types of requests (either from the cli or from the container). Thus, the port mapping is done between requests and containers and other layers that may consume resources from the docker. Docker uses port forwarding to define the routes between the incoming and outgoing connections of each of the containers. Through the Net Filter (iptables) the proper routing is done.
+
+![image](https://user-images.githubusercontent.com/83301821/126413168-1dfd554c-2c02-4f8c-acce-a5664f0fe5fe.png)
+(avaible in : https://www.gta.ufrj.br/ensino/eel879/trabalhos_v1_2017_2/docker/network.html)
+
+Usage:
+
+![image](https://user-images.githubusercontent.com/83301821/126413361-66e5ecdb-f1d9-4692-a3e7-607dcf4c154a.png)
+
+After this, note:
+![image](https://user-images.githubusercontent.com/83301821/126413419-f6e6798c-820a-4fcb-8d2c-59d3393cd15b.png)
+
+There are the parameter 0.0.0.0:5432 > 5432 . The port 5432 external was mapped to 5432 internal. This case, there wasn't PAT (port address translation).
+
  - Bind Mount
  - Volume Mount
