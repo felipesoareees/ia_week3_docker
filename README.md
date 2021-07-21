@@ -1,6 +1,6 @@
 # ia_week3_docker
 
-- Description : This repository has the challenge of week three. It explain the docker tools and  docker concepts.
+- Description : This repository has the challenge of week three. It explain the containers linux and docker tools and  docker concepts.
 
 ## The schedule this project is:
 
@@ -15,10 +15,29 @@ Thus, we have:
 
 Note that the container architecture has neither the hypervisor layer nor the guest operating system. Communication with the OS host is done directly through the runtime file support.
 
+![image](https://user-images.githubusercontent.com/83301821/126408633-451f6b19-a4c0-49a9-877a-9c886319f978.png)
+
+With the container, we can avoid situations like the image above, because we can guarantee that the application will work on all OS, just that the environment setup is done correctly.
+
 # What is a Docker?
 
 - What is?
+
+It is an open source project that uses container technology for operating system virtualization. As we talked about containers in the previous topic, docker emerged as a tool that uses container technology to provide solutions that ensure usability in all environments.
+
+The most succinct and coherent definition (in my opinion is): Docker is an open source platform for building, deploying, and managing containerized applications. *(avaible in : https://www.ibm.com/cloud/learn/docker )
+
 - What is its high-level architecture (Docker Daemon)?
+This is a client-server application with these major components:
+
+![image](https://user-images.githubusercontent.com/83301821/126408917-5f346daa-72e1-4ea3-8c0d-0946f9c85893.png)
+(avaible in: https://medium.com/@hsienwei/a-high-level-overview-of-docker-888d8556e187) 
+
+ A server which is a type of long-running program called a daemon process (the dockerd command). The daemon creates and manages Docker objects, such as images, containers, networks, and volumes.
+ 
+ A REST API which specifies interfaces that programs can use to talk to the daemon and instruct it what to do.
+ 
+ A command line interface (CLI) client (the docker command). The CLI uses the Docker REST API to control or interact with the Docker daemon through scripting or direct CLI commands.
 
 # How Docker is used in Runtime Environment?
 
