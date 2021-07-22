@@ -62,6 +62,20 @@ Demonstration:
 Note that in the image below, we have several images of a application(apache), but with differents tags.
 
  - How send an image to a registry? [PRACTICE]
+For any image, we can change its tag and after logging into the docker hub (which is the public repository of docker images, it works similarly to a github, but for images) and push the desired image.
+
+Usage:
+(i) Tagging the image:
+
+![image](https://user-images.githubusercontent.com/83301821/126588273-a67adfb6-5502-482b-859a-8feb7527f63a.png)
+
+(ii) Login in Docker hub:
+
+![image](https://user-images.githubusercontent.com/83301821/126588344-e8c90323-6cca-40c0-980c-6b13e64342c1.png)
+
+(iii) Push Docker image to hub:
+
+![image](https://user-images.githubusercontent.com/83301821/126588381-061e2f68-8fd9-4f39-8c17-dd19e70498ce.png)
 
 # Run a Docker container with  [PRACTICE]:
  - Detached Mode
